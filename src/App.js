@@ -1,23 +1,27 @@
 import logo from './logo.svg';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Header from './components/Header'
+import FRList from './components/FRList'
+import CompletedCarousel from './components/CompletedCarousel'
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import CompletedDescription from './components/CompletedDescription';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        
+        <main>
+            <Switch>
+            <Route exact path='/knowmore' component={CompletedDescription} />
+            <Route exact path ='/' component={FRList} />
+            </Switch>
+        </main>
     </div>
   );
 }

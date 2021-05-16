@@ -1,0 +1,22 @@
+.donate-details{
+    border: 10px;
+    border-radius: 10px;
+    text-align: left;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    background-color: white;
+}
+
+.donate-item{
+    font-weight: bold;
+    padding: 15px;
+    background-color: #107896;
+    border:5px;
+    border-bottom: solid 3px;
+    border-radius: 25px;
+    border-color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font: Arial;
+    color: white;
+
+}

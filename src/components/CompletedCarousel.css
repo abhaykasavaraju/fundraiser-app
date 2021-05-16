@@ -1,0 +1,11 @@
+.carouselbg{
+    width: 80%;
+    height:500px;
+    padding: 30px;
+    
+}
+.item{
+    background-color:#060B26;
+    width: 98%;
+    align-items: center;
+}
