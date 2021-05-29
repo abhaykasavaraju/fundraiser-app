@@ -1,6 +1,7 @@
 import React from 'react'
 import { Card } from 'react-bootstrap';
 import './Job.css'
+
 const Cards = (props) => {
     return (
      
@@ -14,7 +15,7 @@ const Cards = (props) => {
 
             <img src={props.imageSource}></img>
             <br></br> <br></br> <br></br><br></br>
-            <a href="https://www.amazon.jobs/en-gb/"><button className="btn btn-primary">Apply</button></a>
+            <a href={props.link}><button className="btn btn-primary">Apply</button></a>
 
            
         </div>

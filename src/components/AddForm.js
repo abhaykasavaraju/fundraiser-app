@@ -63,9 +63,9 @@ export class AddForm extends Component {
         console.log(this.state.fundraiser)
         this.state.fundraiser.push(fr)
         console.log(this.state.fundraiser)
-        this.props.parentCallback(this.state.fundraiser);
-        // axios.post('http://localhost:5000/fundraisers/add',fr)
-        //     .then(res =>console.log(res.data));
+        //this.props.parentCallback(this.state.fundraiser);
+        axios.post('http://localhost:5000/fundraisers/add',fr)
+             .then(res =>console.log(res.data));
     }
 
     handleShow = () => {this.setState({show:true})}

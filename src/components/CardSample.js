@@ -3,11 +3,22 @@ import {Card,Button} from 'react-bootstrap'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './CardSample.css'
 import Messages from './Messages'
+import NavigationBar from './NavigationBar'
 import {Container,Row,Col} from 'react-bootstrap'
 export class CardSample extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+             name : props.location.state.name
+        }
+    }
+    
     render() {
         return (
+            <>
+            <NavigationBar name={this.state.name}></NavigationBar>
             <Container>
+                
                 <Row>
                     <Col lg={7}>
                             <div class="card-parent">
@@ -65,6 +76,7 @@ export class CardSample extends Component {
                     </Col>
             </Row>
             </Container>
+            </>
         )
     }
 }

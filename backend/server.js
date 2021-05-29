@@ -19,9 +19,12 @@ connection.once('open', () => {
 })
 
 const fundraisersRouter = require('./routes/fundraisers')
+const userRouter = require('./routes/router')
+const jobRouter = require('./routes/routerjob')
 
 app.use('/fundraisers',fundraisersRouter)
-
+app.use('/users',userRouter)
+app.use('/jobs',jobRouter)
 
 
 app.listen(port, () => {

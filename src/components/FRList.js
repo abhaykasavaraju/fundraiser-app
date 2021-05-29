@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import frdata from '../fundraisers-data';
 import AddForm from './AddForm';
 import { SiFacebook, SiInstagram,SiLinkedin } from "react-icons/si";
 import { BsFillCaretDownFill, BsFillCaretUpFill } from "react-icons/bs";
@@ -7,6 +6,7 @@ import Donate from './Donate'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import './FRList.css'
 import CompletedCarousel from './CompletedCarousel'
+import axios from 'axios'
 
 
 
@@ -14,7 +14,7 @@ export class FRList extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            fundraiser : frdata,
+            fundraiser : []
         }
              
     }
@@ -33,7 +33,7 @@ export class FRList extends Component {
         this.setState({ show: false });
       };
     onDonate =(index)=>{
-      const temp=[...frdata]
+      const temp=[...this.state.fundraiser]
       temp[index].isSelected=true
       this.setState({
         fundraiser:temp
@@ -42,7 +42,7 @@ export class FRList extends Component {
 
     onClickCaratDown =(index) => {
 
-      const temp=[...frdata]
+      const temp=[...this.state.fundraiser]
       temp[index].showDetails =true;
       this.setState({
         fundraiser:temp
@@ -51,14 +51,22 @@ export class FRList extends Component {
 
     onClickCaratUp =(index) => {
 
-      const temp=[...frdata]
+      const temp=[...this.state.fundraiser]
       temp[index].showDetails =false;
       this.setState({
         fundraiser:temp
       })
     };
 
-    
+    componentDidMount() {
+      axios.get('http://localhost:5000/fundraisers')
+        .then(response => {
+          this.setState({ fundraiser: response.data })
+        })
+        .catch((error) => {
+          console.log(error);
+        })
+    }
     
     render() {
            return (

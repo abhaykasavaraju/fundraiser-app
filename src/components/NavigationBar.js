@@ -33,9 +33,10 @@ const Styles = styled.div`
 `;
 
 
-function NavigationBar(){
+function NavigationBar(props){
   const[sidebar,setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
+  console.log(props)
   return(
   <div>
     <IconContext.Provider value={{color:'#fff'}}>
@@ -60,7 +61,7 @@ function NavigationBar(){
           <Nav className="navright">
             <Nav.Item className="navhome"><Nav.Link href="/">Home</Nav.Link></Nav.Item> 
             
-            <NavDropdown title='Suraj Pingali'>
+            <NavDropdown title={props.name}>
                           <NavDropdown.Item>Profile</NavDropdown.Item>
                           <NavDropdown.Item>Settings</NavDropdown.Item>
             </NavDropdown>
