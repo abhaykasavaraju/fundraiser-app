@@ -1,0 +1,9 @@
+.modal-size{
+
+    width:897px;
+}
+.form-group.required .control-label:after {
+    content:"*";
+    color:red;
+  }
+  

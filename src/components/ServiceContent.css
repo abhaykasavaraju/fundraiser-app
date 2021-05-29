@@ -1,0 +1,121 @@
+
+.sec{
+    width:100%;
+    border : solid red 2px;
+
+}
+.btns{
+  border:solid 3px chartreuse;
+}
+
+.container-1{
+    
+    display:inline-block;
+    width:fit-content;
+    height:fit-content;
+    align-items: center;
+   /* border: 4px solid  violet;*/
+    padding: 10px 10px 10px 10px;
+   
+}
+
+
+.section-title {
+
+    text-align: left;
+    align-items: center;
+    text-transform: uppercase;
+    color:black;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 400;
+    font-stretch: extra-expanded;
+    letter-spacing: 6px;
+}
+.col-1 {
+    float: left;
+    width: 600px;
+    height: 300px;
+    border: 1px solid blue;
+    text-align:justify;
+  }
+
+  
+.col-2 {
+    
+    float: right;
+    width: 45%;
+    
+    border: 1px solid red;
+    
+  }
+  
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .card-img{
+    width: 50%;
+    height: 50%;
+  }
+
+  .rowHeading{
+    
+    padding: 4rem;
+    text-align: center;
+    background-image: url("https://alumni.iitism.ac.in/assets/images/Events/StudentAlumniMeet.jpg") ;
+    background-size: auto;
+    font-style: italic;
+    font-size: larger;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    
+}
+
+.level-1__title, .level-2__title{
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+  }
+  
+
+.column1{
+
+  float: left;
+  width: 50%;
+  text-align: justify;
+  padding: 40px;
+  padding-top: 40px;
+}
+
+.column2{
+
+  float:right;
+  width:50%
+}
+
+.row1{
+  flex-direction: column;
+}
+
+.aboutEvent{
+  text-align: left;
+   /* border: 4px solid  violet;*/
+  padding:40px;
+}
+
+.serviceItem{
+background-color:#060B26;
+width: 950px;
+height:600px;
+
+}
+
+.caraouselbg{
+  width: 200px;
+  height: 500px;
+}

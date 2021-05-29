@@ -34,7 +34,7 @@ export class CompletedCarousel extends Component {
     
     render() {
         return (
-            <div>
+            <div className="carouselParent">
 
                
 
@@ -52,8 +52,8 @@ export class CompletedCarousel extends Component {
                             
                             />
                             <Carousel.Caption>
-                               <h3><span className="badge badge-success">{fr.heading}</span></h3>
-                               <h3><span className="badge badge-danger">{fr.goalAmount}</span></h3>
+                               <h3><span className="badge bg-success">{fr.heading}</span></h3>
+                               <h3><span className="badge bg-danger">Collected Amount {fr.goalAmount}</span></h3>
                               
                                <Link to={{
                                         pathname: "/knowmore",

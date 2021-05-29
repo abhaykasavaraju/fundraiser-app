@@ -34,8 +34,9 @@
 }
 
 .columnThree{
-padding-left: 5%;
-   float: right;
+    width: 5%;
+    padding-left: 5%;
+    float: right;
 }
 
 .donate-footer{

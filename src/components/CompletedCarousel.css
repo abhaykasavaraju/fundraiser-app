@@ -1,3 +1,8 @@
+
+.carouselParent{
+    align-items: center;
+}
+
 .carouselbg{
     width: 80%;
     height:500px;
@@ -6,6 +11,6 @@
 }
 .item{
     background-color:#060B26;
-    width: 98%;
+    width: 100% ;
     align-items: center;
 }

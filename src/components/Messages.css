@@ -1,0 +1,68 @@
+.wall-main{
+    margin-left:300px;
+    margin-top: 50px;
+    border : 5px solid black;
+    border-radius: 10px;
+    width: 30%;
+    position: absolute;
+    
+}
+.post-main{
+    
+    border: 7px solid grey;
+    border-radius: 7px;
+    padding: 20px 0px 20px 0px;
+    margin: 50px 50px 50px 50px;
+}
+.post-header{
+    padding: 20px;
+    background-color: #1261A0 ;
+    color: white;
+}
+
+.post-sender{
+    text-align: left;
+    padding: 10px 50px 20px 50px;
+    border-bottom: solid grey 1px;
+    
+}
+
+.post-body{
+    border-bottom : 3px solid grey;
+    text-align: justify;
+    padding: 30px 50px 50px 50px;
+    margin-bottom: 20px;
+    font-size: larger;
+}
+
+.post-comments{
+    text-align: left;
+    border: 4px solid black;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    margin-left: 80px;
+    margin-right: 20px;
+    margin-top: 30px;
+   
+
+}
+.comment-sender{
+    border-bottom: 3px solid grey;
+    padding: 20px 20px 20px 20px;
+    text-align: left;
+}
+.comment-body{
+    text-align: justify;
+    padding: 20px 20px 20px 20px;
+    font-size: large;
+}
+.post-reply{
+    padding: 0px 10px 0px 10px;
+    margin-bottom: 80px;
+    
+}
+.post-footer{
+}
+.footer-button{
+    margin-left: 450px;
+}

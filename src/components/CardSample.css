@@ -1,0 +1,31 @@
+.card-main{
+
+    background-color: #060B26; ;
+    border-radius: 20px;
+    display: block;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-right : 10px;
+    margin : 10px;
+    color: white;
+    height: 1000px;
+
+}
+.card-parent{
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    /* border: solid red 20px; */
+    width: 1000px;
+}
+
+.card-header{
+    border-bottom: 5px solid;
+}
+.card-image{
+    width: 80%;
+    height: 500px;
+}

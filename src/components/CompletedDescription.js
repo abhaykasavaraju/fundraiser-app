@@ -9,14 +9,14 @@ function CompletedDescription() {
     console.log(location)
     return (
         <div>
-            <h2><span className="badge badge-success">{location.state.heading}</span></h2>
+            <h2><span className="badge bg-success">{location.state.heading}</span></h2>
             <div >
              <p className="descr">{location.state.description}</p>
              </div>
             <img className="descrimg" src={location.state.src}></img>
             <br></br>
             <br></br>
-            <h1>Amount Raised <span className="badge badge-success">{location.state.goalAmount}</span></h1>
+            <h1>Amount Raised <span className="badge bg-success">{location.state.goalAmount}</span></h1>
             
         </div>
     )

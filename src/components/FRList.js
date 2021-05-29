@@ -7,7 +7,7 @@ import Donate from './Donate'
 import ProgressBar from 'react-bootstrap/ProgressBar'
 import './FRList.css'
 import CompletedCarousel from './CompletedCarousel'
-import Header from './Header'
+
 
 
 export class FRList extends Component {
@@ -63,7 +63,7 @@ export class FRList extends Component {
     render() {
            return (
           <div className="main">
-                <Header></Header>
+                
                  {this.state.fundraiser.map((fr,index) => (
                   <div className="fr-list" key={index}>
                     <div className="row heading-row">
@@ -125,7 +125,6 @@ export class FRList extends Component {
                     
                 </div>))}
               
-                
                 <AddForm
                 parentCallback = {this.handleCallback} 
                 fundraiser={this.state.fundraiser}
@@ -135,7 +134,7 @@ export class FRList extends Component {
               <br></br>
               <hr></hr>
               <div>
-                <h2><span className="badge badge-primary">Completed Fundraisers</span></h2>
+                <h2><span className="badge bg-primary">Completed Fundraisers</span></h2>
                 <CompletedCarousel></CompletedCarousel>
               </div>
                 

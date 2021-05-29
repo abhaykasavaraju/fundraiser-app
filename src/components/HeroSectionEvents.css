@@ -1,0 +1,19 @@
+.container{
+    
+    padding: 4rem;
+   
+    text-align: center;
+    align-items: center;
+    background-image: url("https://alumni.iitism.ac.in/assets/images/Events/StudentAlumniMeet.jpg") ;
+    
+    font-style: italic;
+    font-size: larger;
+    
+}
+
+.level-1__title, .level-2__title{
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+  }
+  
