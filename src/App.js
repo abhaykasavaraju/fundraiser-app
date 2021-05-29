@@ -4,7 +4,6 @@ import './App.css';
 import Header from './components/Header'
 import FRList from './components/FRList'
 import CompletedCarousel from './components/CompletedCarousel'
-import Home from './components/Home'
 import Events from './components/Events'
 import Services from './components/Services'
 import Test from './components/Test'
