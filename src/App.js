@@ -31,13 +31,11 @@ function App() {
               <Route exact path ='/login' component={Signin} />
               <Route exact path ='/signup' component={Signup} />
               <Route exact path ='/' component={CardSample} />
-              <Route exact path ='/cards' component={CardSample} />
               <Route exact path ='/jobs' component={Job} />
               <Route exact path='/knowmore' component={CompletedDescription} />
               <Route exact path ='/fundraisers' component={FRList} />
               <Route exact path ='/events' component={Events} />
               <Route exact path ='/services' component={Services}/>
-              <Route exact path ='/test' component={Test}/>
             </Switch>
         </main>
     </div>
