@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';  
 import './HeroSection.css';
+import NavigationBar from './NavigationBar'
 
 function HeroSection() {
   return (

@@ -2,7 +2,7 @@ import React, { useEffect,useState } from 'react'
 import CardJobs from './CardJobs'
 import './Job.css'
 import axios from 'axios'
-
+import NavigationBar from './NavigationBar'
 const Job = () => {
   
     const [arr, setarr] = useState([])
@@ -19,7 +19,6 @@ const Job = () => {
 
     return (
         <>
-           
            <div className="head"> <h1 style={{textAlign:'center',color:'white',paddingTop:'20px'}}>The Job Portal</h1> </div>
 
            <div style ={{paddingTop:'50px', paddingLeft:'35%'}}>

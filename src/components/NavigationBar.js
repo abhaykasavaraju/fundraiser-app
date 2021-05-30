@@ -6,8 +6,9 @@ import { SidebarData } from './SidebarData';
 import {IconContext} from 'react-icons';
 import { Nav, Navbar, Form, FormControl, NavDropdown } from 'react-bootstrap';
 import styled from 'styled-components';
-import {Link }from 'react-router-dom';
+import {Link,NavLink,Redirect,Route }from 'react-router-dom';
 import './NavigationBar.css';
+import CardSample from './CardSample'
 
 const Styles = styled.div`
   .navbar { background-color: #060b26; min-height: 70px;}
@@ -39,6 +40,7 @@ function NavigationBar(props){
   console.log(props)
   return(
   <div>
+    
     <IconContext.Provider value={{color:'#fff'}}>
      <Styles> 
       <Navbar expand="lg" bg="dark">
@@ -59,7 +61,7 @@ function NavigationBar(props){
         
         <Navbar.Collapse id="basic-navbar-nav" className="navcollapse">
           <Nav className="navright">
-            <Nav.Item className="navhome"><Nav.Link href="/">Home</Nav.Link></Nav.Item> 
+            <Nav.Item className="navhome"><Nav.Link><NavLink to="/home">Home</NavLink></Nav.Link></Nav.Item> 
             
             <NavDropdown title={props.name}>
                           <NavDropdown.Item>Profile</NavDropdown.Item>

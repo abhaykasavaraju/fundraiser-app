@@ -7,12 +7,14 @@ import ProgressBar from 'react-bootstrap/ProgressBar'
 import './FRList.css'
 import CompletedCarousel from './CompletedCarousel'
 import axios from 'axios'
+import NavigationBar from './NavigationBar'
 
 
 
 export class FRList extends Component {
     constructor(props) {
         super(props)
+        console.log(props)
         this.state = {
             fundraiser : []
         }
@@ -70,6 +72,7 @@ export class FRList extends Component {
     
     render() {
            return (
+          <>
           <div className="main">
                 
                  {this.state.fundraiser.map((fr,index) => (
@@ -147,7 +150,10 @@ export class FRList extends Component {
               </div>
                 
           </div>
+        </>
         );
+
+
     
     }
 }

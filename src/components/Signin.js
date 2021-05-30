@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import './Signin.css'
 import {Link,Redirect} from 'react-router-dom';
@@ -6,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
 
-const Signin = (value) => 
+const Signin = (props) => 
 {
   const [name,setName] =  useState()
   const [roll,setRoll] = useState()
@@ -47,7 +48,9 @@ const Signin = (value) =>
   if(val==3)
   {
     console.log(name)
-    return (<><Redirect to={{pathname : "/" ,state:{name: name}}}/></>)
+    console.log(props)
+    props.usernameCallBack(name)
+    return (<><Redirect to={{pathname : "/home" ,state:{name: name}}}/></>)
   }
 
   const temp = 'url("https://png.pngtree.com/thumb_back/fh260/back_our/20190621/ourmid/pngtree-retro-time-recalling-the-year-of-the-alumni-association-image_194183.jpg")'
@@ -90,5 +93,3 @@ const Signin = (value) =>
 }
 
 export default Signin;
-
-

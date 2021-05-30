@@ -4,7 +4,8 @@ import './ServiceContent.css';
 import Carousel from 'react-bootstrap/Carousel';
 import Card from 'react-bootstrap/Card'
 import { useLocation } from 'react-router';
-import { CarouselItem } from 'react-bootstrap'
+import { CarouselItem } from 'react-bootstrap';
+import NavigationBar from './NavigationBar'
 
 
 function ServiceContent() {
