@@ -31,10 +31,11 @@ function App() {
         
         <main>
 
-          {location.pathname !== '/login' && location.pathname !=='/signup' && <NavigationBar name = {name}/>}
+          {location.pathname !== '/login' && location.pathname!=='/'  && location.pathname !=='/signup' && <NavigationBar name = {name}/>}
 
             <Switch>  
 
+              <Route exact path ='/'  render={() => <Signin usernameCallBack={usernameCallBack} />}/>
               <Route exact path ='/login'  render={() => <Signin usernameCallBack={usernameCallBack} />}/>
               <Route exact path ='/signup' component={Signup} />
               <Route exact path = '/home'component={CardSample} />
