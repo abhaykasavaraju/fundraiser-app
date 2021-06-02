@@ -152,7 +152,7 @@ export class Messages extends Component {
                                         </Col>
 
                                         <Col className = "sender"  lg={7}>
-                                            <CgProfile size={40}></CgProfile> {post.sender} 
+                                            <CgProfile size={40}></CgProfile> {post.sender !== this.state.name ? post.sender : post.receiver}
                                         </Col>
 
                                         <Col className = "sender" lg={1}>
