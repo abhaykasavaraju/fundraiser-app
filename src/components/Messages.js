@@ -3,16 +3,38 @@ import postdata from '../postdata';
 import './Messages.css'
 import { CgProfile } from "react-icons/cg";
 import { BsFillCaretDownFill, BsFillCaretUpFill } from "react-icons/bs";
+import axios from 'axios'
 export class Messages extends Component {
     constructor(props) {
         super(props)
-    
         this.state = {
              feed: false,
-             data : postdata,
-             reply: ''
+             name: props.name,
+             reply: '',
+             data : []
         }
+        console.log(this.state.data)
         this.handleChangeReply = this.handleChangeReply.bind(this)
+    }
+
+    componentDidMount(){
+
+        axios.get('http://localhost:5000/posts/'+this.state.name)
+          .then(response => {
+            console.log(response.data)
+            const temp = response.data
+            for (let post of temp){
+                post.showReplyForm = false
+                post.showReply = true
+                post.showPost = false
+            }
+            console.log(temp)
+            this.setState({ data : temp})
+          })
+          .catch((error) => {
+            console.log(error);
+          })
+
     }
   
     hideFeed = (hide) =>{
@@ -22,7 +44,6 @@ export class Messages extends Component {
     }
     
     onReply = (index) => {
-
         const temp = [...this.state.data]
         temp [index].showReplyForm = true
         temp [index].showPost = true
@@ -33,21 +54,34 @@ export class Messages extends Component {
 
     }
 
-    onPost = (index) => {
+    onPost = (index,id) => {
+        console.log("Here" + id)
+        console.log(typeof(id))
+        const comment = {
+            sender : this.state.name,
+            comment : this.state. reply
+        }
 
-        const temp = [...this.state.data]
-        temp [index].showReplyForm = false
-        temp [index].showPost = false
-        temp [index].showReply = true
-        temp [index].comments.push(
-            {
-                sender : "Suraj Pingali",
-                message : this.state.reply,
-            }
-        )
+        axios.post('http://localhost:5000/posts/addcomments/' + id, comment)
+        .then(res => console.log(res.data));
         this.setState({
-            data : temp,
             reply : ''
+        })
+
+        axios.get('http://localhost:5000/posts/'+this.state.name)
+        .then(response => {
+          console.log(response.data)
+          const temp = response.data
+          for (let post of temp){
+              post.showReplyForm = false
+              post.showReply = true
+              post.showPost = false
+          }
+          console.log(temp)
+          this.setState({ data : temp})
+        })
+        .catch((error) => {
+          console.log(error);
         })
         
     }
@@ -56,8 +90,9 @@ export class Messages extends Component {
     
     render() {
         return (
+           
             <div className = "wall-main">
-
+                {console.log(this.state.data)}
                 <div className = "post-header">
                     <h3>Feed  {this.state.feed?  <BsFillCaretUpFill onClick = {()=>this.hideFeed(true)}></BsFillCaretUpFill> : <BsFillCaretDownFill onClick = {()=>this.hideFeed(false)}></BsFillCaretDownFill> }</h3>
                 </div>
@@ -68,7 +103,7 @@ export class Messages extends Component {
                         <h5 className="post-sender" ><CgProfile></CgProfile> {post.sender} </h5>
                     
                         <div className ="post-body">
-                            {post.postMessage}
+                            {post.message}
                         </div>
 
                         {
@@ -76,8 +111,8 @@ export class Messages extends Component {
                             
                             <div>
                                 <div className = "post-comments">
-                                    <h5 className = "comment-sender"><CgProfile/>  {comment.sender}</h5>
-                                    <p className = "comment-body">{comment.message}</p>
+                                    <h5 className = "comment-sender"><CgProfile/>  {comment.commentSender}</h5>
+                                    <p className = "comment-body">{comment.comment}</p>
                                 </div>
                             </div>
                             ))
@@ -90,7 +125,7 @@ export class Messages extends Component {
 
                         <div className="post-footer">
                                 {post.showReply?<button className="footer-button btn btn-primary" onClick={()=>this.onReply(index)}>Reply</button>:''}
-                                {post.showPost ? <button className="footer-button btn btn-danger" onClick={()=>this.onPost(index)}>Post</button>:''}
+                                {post.showPost ? <button className="footer-button btn btn-danger" onClick={()=>this.onPost(index,post._id)}>Post</button>:''}
                         </div>
 
                     </div>

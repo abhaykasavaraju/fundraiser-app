@@ -21,10 +21,12 @@ connection.once('open', () => {
 const fundraisersRouter = require('./routes/fundraisers')
 const userRouter = require('./routes/router')
 const jobRouter = require('./routes/routerjob')
+const postRouter = require('./routes/posts')
 
 app.use('/fundraisers',fundraisersRouter)
 app.use('/users',userRouter)
 app.use('/jobs',jobRouter)
+app.use('/posts',postRouter)
 
 
 app.listen(port, () => {

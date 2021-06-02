@@ -38,7 +38,7 @@ function App() {
               <Route exact path ='/'  render={() => <Signin usernameCallBack={usernameCallBack} />}/>
               <Route exact path ='/login'  render={() => <Signin usernameCallBack={usernameCallBack} />}/>
               <Route exact path ='/signup' component={Signup} />
-              <Route exact path = '/home'component={CardSample} />
+              <Route exact path = '/home' render={() =><CardSample name ={name}/>}/>
               <Route exact path ='/jobs' component={Job} />
               <Route exact path='/knowmore' component={CompletedDescription} />
               <Route exact path ='/fundraisers' component={FRList} />

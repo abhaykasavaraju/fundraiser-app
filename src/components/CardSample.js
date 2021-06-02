@@ -3,6 +3,7 @@ import {Card,Button} from 'react-bootstrap'
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './CardSample.css'
 import Messages from './Messages'
+import axios from 'axios'
 
 import {Container,Row,Col} from 'react-bootstrap'
 
@@ -11,14 +12,21 @@ import {Container,Row,Col} from 'react-bootstrap'
 export class CardSample extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            name : props.name
+        }
+        console.log("constructor"+ props.posts)
     }
+    componentDidMount() {
+        
+      }
     
     render() {
         return (
             <>
             
             <Container>
-                
+                   
                 <Row>
                     <Col lg={7}>
                             <div class="card-parent">
@@ -72,7 +80,7 @@ export class CardSample extends Component {
                     </Col>
 
                     <Col lg={4}>
-                         <Messages></Messages> 
+                         <Messages name ={this.state.name}></Messages> 
                     </Col>
             </Row>
             </Container>
