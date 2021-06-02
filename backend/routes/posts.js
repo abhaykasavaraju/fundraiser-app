@@ -14,7 +14,13 @@ router.route('/').get((req, res) => {
   })
 
   router.route('/:receiver').get((req, res) => {
-    Post.find({"receiver":req.params.receiver})
+    Post.find().or([{"receiver":req.params.receiver},{"sender":req.params.receiver}])
+      .then(posts => res.json(posts))
+      .catch(err => res.status(400).json('Error: ' + err));
+  });
+
+  router.route('/:receiver/delete').get((req, res) => {
+    Post.remove().or([{"receiver":req.params.receiver},{"sender":req.params.receiver}])
       .then(posts => res.json(posts))
       .catch(err => res.status(400).json('Error: ' + err));
   });

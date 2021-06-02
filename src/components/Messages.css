@@ -24,6 +24,7 @@
     text-align: left;
     padding: 10px 50px 20px 50px;
     border-bottom: solid grey 1px;
+    size: 100px;
     
 }
 
@@ -61,8 +62,11 @@
     margin-bottom: 80px;
     
 }
-.post-footer{
-}
+
 .footer-button{
     margin-left: 450px;
+}
+
+.sender{
+    font-size: 30px;
 }
