@@ -147,11 +147,11 @@ export class Messages extends Component {
                             <div className ="post-sender">
                                 <Container>
                                     <Row>
-                                        <Col   className = "sender" lg={4}>
-                                            {post.sender !== this.state.name ? <span class="badge bg-success">Sent By</span> : <span  class="badge bg-danger">Sent To</span>}
+                                        <Col   className = "sender" lg={5}>
+                                            {post.sender !== this.state.name ? <span class="badge bg-success">Received From</span> : <span  class="badge bg-danger">Sent To </span>}
                                         </Col>
 
-                                        <Col className = "sender"  lg={7}>
+                                        <Col className = "sender"  lg={6}>
                                             <CgProfile size={40}></CgProfile> {post.sender !== this.state.name ? post.sender : post.receiver}
                                         </Col>
 

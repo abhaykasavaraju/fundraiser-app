@@ -121,11 +121,11 @@ export class FRList extends Component {
                       <div className="donate-footer">
                         <button className="btn btn-primary rounded-0"  onClick={()=>this.onDonate(index)}>Donate</button> 
                           &nbsp; &nbsp; 
-                        <a href="https://www.facebook.com"> <SiFacebook></SiFacebook></a>
+                        <a href="https://www.facebook.com"> <SiFacebook size={30} fill= "black"></SiFacebook></a>
                         &nbsp; &nbsp; 
-                        <a href="https://www.instagram.com"> <SiInstagram></SiInstagram> </a>
+                        <a href="https://www.instagram.com"> <SiInstagram   size={30} fill= "black"></SiInstagram> </a>
                         &nbsp; &nbsp;
-                        <a href="https://www.linkedin.com"> <SiLinkedin></SiLinkedin> </a><br></br>
+                        <a href="https://www.linkedin.com"> <SiLinkedin  size={30} fill= "black"></SiLinkedin> </a><br></br>
                       <br></br>
                       {fr.isSelected ? <Donate details={fr}></Donate> :''}
                     </div>
