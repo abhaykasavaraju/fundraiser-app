@@ -22,12 +22,12 @@ const fundraisersRouter = require('./routes/fundraisers')
 const userRouter = require('./routes/router')
 const jobRouter = require('./routes/routerjob')
 const postRouter = require('./routes/posts')
-
+const eventRouter=require('./routes/events')
 app.use('/fundraisers',fundraisersRouter)
 app.use('/users',userRouter)
 app.use('/jobs',jobRouter)
 app.use('/posts',postRouter)
-
+app.use('/events',eventRouter)
 
 app.listen(port, () => {
     console.log(`Server is running on port: ${port}`);
