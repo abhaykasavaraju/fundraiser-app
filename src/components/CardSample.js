@@ -83,6 +83,13 @@ export class CardSample extends Component {
                          <Messages name ={this.state.name}></Messages> 
                     </Col>
             </Row>
+
+            <Link to={{
+                        pathname: "/profile",
+                        state: { name :"Abhay" },
+                     }}
+              className="btn btn-warning">Know More</Link>
+            
             </Container>
             </>
         )

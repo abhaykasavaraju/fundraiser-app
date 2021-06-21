@@ -9,6 +9,7 @@ import styled from 'styled-components';
 import {Link,NavLink,Redirect,Route }from 'react-router-dom';
 import './NavigationBar.css';
 import CardSample from './CardSample'
+import Search from './Search'
 
 const Styles = styled.div`
   .navbar { background-color: #060b26; min-height: 70px;}
@@ -37,10 +38,8 @@ const Styles = styled.div`
 function NavigationBar(props){
   const[sidebar,setSidebar] = useState(false);
   const showSidebar = () => setSidebar(!sidebar);
-  console.log(props)
   return(
-  <div>
-    
+    <div>
     <IconContext.Provider value={{color:'#fff'}}>
      <Styles> 
       <Navbar expand="lg" bg="dark">
@@ -55,9 +54,7 @@ function NavigationBar(props){
 
         <Navbar.Brand href="/">ASGP</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
-        <Form className="form-center">
-          <FormControl type="text" placeholder="Search" className="" />
-        </Form>
+         <Search/>
         
         <Navbar.Collapse id="basic-navbar-nav" className="navcollapse">
           <Nav className="navright">
@@ -95,7 +92,7 @@ function NavigationBar(props){
         </nav>
         </IconContext.Provider>
   </div>
-);
+); 
 }
 
 export default NavigationBar;

@@ -12,6 +12,15 @@ app.get('/find',jsonParser, async(req, res)=> {
    
 });
 
+app.get('/find/:user',jsonParser, async(req, res)=> {
+
+    const reg =  new RegExp(req.params.user,'i'); 
+    user.find({"name":{$regex : reg }}) 
+    .then(user=>res.json(user))
+    .catch((e)=>console.log(e))
+   
+});
+
 app.post("/add",jsonParser,async(req,res)=>{
   
 

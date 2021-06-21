@@ -19,6 +19,7 @@ import NavigationBar from './components/NavigationBar'
 import Signin from './components/Signin'
 import Signup from './components/Signup'
 import {useState} from 'react'
+import UserProfile from './components/UserProfile';
 function App() {
   const location = useLocation();
   const [name, setName] = useState();
@@ -44,6 +45,7 @@ function App() {
               <Route exact path ='/fundraisers' component={FRList} />
               <Route exact path ='/events' component={Events} />
               <Route exact path ='/services' component={Services}/>
+              <Route exact path ='/profile' component={UserProfile}/>
               <Route component ={NavigationBar}></Route>
 
             </Switch>
