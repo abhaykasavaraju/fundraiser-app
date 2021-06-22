@@ -22,7 +22,7 @@
 
 .post-sender{
     text-align: left;
-    padding: 10px 50px 20px 50px;
+    padding: 10px 10px 20px 0px;
     border-bottom: solid grey 3px;
     size: 100px;
     
@@ -67,6 +67,3 @@
     margin-left: 450px;
 }
 
-.sender{
-    font-size: 25px;
-}

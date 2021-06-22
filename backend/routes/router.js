@@ -30,6 +30,12 @@ app.get('/find',jsonParser, async(req, res)=> {
    
 });
 
+app.get('/image/:name',async(req,res)=>{
+  user.find({"name":req.params.name})
+  .then(user=>res.json(user))
+  .catch((e)=>console.log(e))
+});
+
 app.get('/find/:user',jsonParser, async(req, res)=> {
 
     const reg =  new RegExp(req.params.user,'i'); 
