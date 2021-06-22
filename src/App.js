@@ -6,6 +6,7 @@ import CompletedCarousel from './components/CompletedCarousel'
 import Events from './components/Events'
 import Services from './components/Services'
 
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -32,7 +33,7 @@ function App() {
         
         <main>
 
-          {location.pathname !== '/login' && location.pathname!=='/'  && location.pathname !=='/signup' && <NavigationBar name = {name}/>}
+          {location.pathname !== '/login' && location.pathname !== '/registration' && location.pathname!=='/'  && location.pathname !=='/signup' && <NavigationBar name = {name}/>}
 
             <Switch>  
 

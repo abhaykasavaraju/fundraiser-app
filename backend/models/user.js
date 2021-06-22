@@ -26,7 +26,11 @@ const user = new mongoose.Schema({
         required : true
     },
 
-    idcardpic :{
+    // idcardpic :{
+    //     type : String
+    // },
+
+    image:{
         type : String
     }
 
