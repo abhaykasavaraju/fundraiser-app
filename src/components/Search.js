@@ -17,7 +17,7 @@ function Search() {
         <div>
             {console.log(redirect)}
             <Form onSubmit={handleSubmit}>
-                <Form.Control type="input" placeholder="Search" value={name} onChange={e=>setName(e.target.value)} />
+                <Form.Control type="input" placeholder="Search for a member" value={name} onChange={e=>setName(e.target.value)} />
             </Form>
 
             {redirect?<> 
