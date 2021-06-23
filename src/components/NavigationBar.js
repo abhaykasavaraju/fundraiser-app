@@ -42,7 +42,7 @@ function NavigationBar(props){
     <div>
     <IconContext.Provider value={{color:'#fff'}}>
      <Styles> 
-      <Navbar expand="lg" bg="dark">
+      <Navbar expand="lg" className="navbar">
        
        
        
@@ -68,28 +68,26 @@ function NavigationBar(props){
         </Navbar.Collapse>
       </Navbar>
     </Styles> 
-    <nav className={sidebar ? 'navi-menu active':'navi-menu'}>
-          <ul className='navi-menu-items' onClick={showSidebar}>
-            <li className="navibar-toggle">
-              <Link to='#' className='menu-bars'>
-                  <AiIcons.AiOutlineClose/>
-              </Link>
-            </li>
-            {SidebarData.map((item,index) => {return(
-
-              <li key={index} className={item.cName}>
-                <Link to={{pathname:item.path}}>
+    <nav className={sidebar ? 'nav-menu active':'nav-menu'}> 
+        <ul className="nav-menu-items" onClick={showSidebar}>
+          <li className="navbar-toggle">
+            <Link to="#" className='menu-bars'>
+              <AiIcons.AiOutlineClose/>  
+            </Link>
+          </li>
+          {SidebarData.map((item, index) => {
+            return (
+              <li key={index} className={item.cname}>
+                <Link to={item.path}>
                   {item.icon}
-                  <span>{item.title}</span>
+                  
+                  <span className="nav-items-span">{item.title}</span>
                 </Link>
               </li>
-
             )
-            })
-            }
-          </ul>
-
-        </nav>
+          })}
+        </ul>
+      </nav>
         </IconContext.Provider>
   </div>
 ); 
