@@ -61,8 +61,9 @@ function NavigationBar(props){
             <Nav.Item className="navhome"><Nav.Link><NavLink to="/home">Home</NavLink></Nav.Link></Nav.Item> 
             
             <NavDropdown title={props.name}>
-                          <NavDropdown.Item>Profile</NavDropdown.Item>
-                          <NavDropdown.Item>Settings</NavDropdown.Item>
+                          <NavDropdown.Item style={{color:"blue"}}>Profile</NavDropdown.Item>
+                          <NavDropdown.Item style={{color:"blue"}}>Settings</NavDropdown.Item>
+                          <NavDropdown.Item ><NavLink style={{color:"blue"}} to="/login">Logout</NavLink></NavDropdown.Item>
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>

@@ -48,7 +48,7 @@ export class CardSample extends Component {
                                 <Card className="card-main">
                                 <Card.Header className="card-header"  as="h5">Jobs</Card.Header>
                                     <Card.Body>
-                                        <Card.Title>Apply to Amazon</Card.Title>
+                                        <Card.Title></Card.Title>
                                         <Card.Text>
                                         Apply for jobs and grow your career.
                                         </Card.Text>
