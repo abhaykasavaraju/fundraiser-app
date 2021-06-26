@@ -51,6 +51,7 @@ app.post("/add",upload,async(req,res)=>{
       const mail = req.body.mail;
       const password = req.body.pass;
       const repassword = req.body.repass;
+      const role = req.body.role;
     //   const idcardpic = req.body.pic;
       const img = req.file.filename;
     
@@ -61,7 +62,8 @@ app.post("/add",upload,async(req,res)=>{
           password:password,
           repassword:repassword,
           //idcardpic: idcardpic,
-          image : img
+          image : img,
+          role: role
       });
  
       newuser.save()

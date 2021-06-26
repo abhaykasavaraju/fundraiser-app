@@ -24,13 +24,17 @@ const Signin = () => {
     console.log(repass)
     console.log(pic)
 
+    const temp = (21-(parseInt(roll.substring(0,2)))>4) ? "Alumni" : "Student";
+    console.log(temp)
+    
     const user = {
       name: name,
       roll: roll,
       mail: mail,
       pass: pass,
       repass: repass,
-      image: profilepic
+      image: profilepic,
+      role: temp
 
     }
     var fd = new FormData();
@@ -40,6 +44,7 @@ const Signin = () => {
     fd.append("pass", pass);
     fd.append("repass", repass);
     fd.append("image", profilepic);
+    fd.append("role",temp)
 
     axios.post("http://localhost:5000/users/add", fd)
       .then(

@@ -58,10 +58,10 @@ export class Messages extends Component {
     }
 
     loadPosts = () => {
-
+        console.log(this.state.name)
         axios.get('http://localhost:5000/posts/' + this.state.name)
             .then(response => {
-                console.log(response.data)
+                //console.log(response.data)
                 const temp = response.data
                 for (let post of temp) {
                     post.showReplyForm = false
@@ -69,7 +69,7 @@ export class Messages extends Component {
                     post.showPost = false
                     post.show = false
                 }
-                console.log(temp)
+                //console.log(temp)
                 this.setState({ data: temp })
             })
             .catch((error) => {
@@ -83,8 +83,6 @@ export class Messages extends Component {
     }
 
     onPost = (index, id) => {
-        console.log("Here" + id)
-        console.log(typeof (id))
         const comment = {
             sender: this.state.name,
             comment: this.state.reply
@@ -147,7 +145,7 @@ export class Messages extends Component {
         return (
 
             <div className="wall-main">
-                {console.log(this.state.data)}
+                {/* {console.log(this.state.data)} */}
                 <div className="post-header">
                     <h3>Feed  {this.state.feed ? <BsFillCaretUpFill onClick={() => this.hideFeed(true)}></BsFillCaretUpFill> : <BsFillCaretDownFill onClick={() => this.hideFeed(false)}></BsFillCaretDownFill>}</h3>
                 </div>
@@ -163,10 +161,10 @@ export class Messages extends Component {
                                     </Col>
 
                                     <Col lg={3} style={{ paddingLeft: '50px' }}>
-                                        {post.sender !== this.state.name ? <img style={{ height: '90px', width: 'auto', borderRadius: '50%'}} src={`/uploads/${this.state.allMembers.find(user => user.name === post.sender).image}`} /> : <img style={{ height: '90px', width: 'auto', borderRadius: '50%' }} src={`/uploads/${this.state.allMembers.find(user => user.name === post.receiver).image}`} />}
+                                        {post.sender !== this.state.name ? <img style={{ height: '90px', width: 'auto', borderRadius: '50%' }} src={`/uploads/${this.state.allMembers.find(user => user.name === post.sender).image}`} /> : <img style={{ height: '90px', width: 'auto', borderRadius: '50%' }} src={`/uploads/${this.state.allMembers.find(user => user.name === post.receiver).image}`} />}
                                     </Col>
 
-                                    <Col lg={5} style={{ fontSize:'5px',paddingLeft: '50px' }}>
+                                    <Col lg={5} style={{ fontSize: '5px', paddingLeft: '50px' }}>
                                         {post.sender !== this.state.name ? <h6>{post.sender}</h6> : <h6>{post.receiver}</h6>}
                                     </Col>
 

@@ -22,9 +22,9 @@ function UserProfile(props) {
     
     return (
         <div className="user-cards">
-           
-            {console.log(typeof(users))}
-            {users.map((user,index)=>( 
+
+            {users.length === 0 ? <h1>No Members Found!</h1> :
+            users.map((user,index)=>( 
              <Card border="secondary" text="white"  className="user-card-body">
                     <Card.Body>
                         <Container className="user-card-title">
@@ -44,7 +44,10 @@ function UserProfile(props) {
                             <span class="badge bg-success">Roll Number</span> {user.rollno}
                             </Card.Text>
                             <Card.Text>
-                            <span class="badge bg-danger">E-Mail</span> {user.mail}
+                            <span class="badge bg-dark">E-Mail</span> {user.mail}
+                            </Card.Text>
+                            <Card.Text>
+                            <span class="badge bg-danger">Role</span> {user.role}
                             </Card.Text>
                         </Container>
                     </Card.Body>

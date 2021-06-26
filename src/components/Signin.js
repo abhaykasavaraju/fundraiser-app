@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
 
+
 const Signin = (props) => {
   const [name, setName] = useState()
   const [roll, setRoll] = useState()
@@ -88,6 +89,10 @@ const Signin = (props) => {
             <Link to="/signup"><Button type="button" className="btn btn-danger" style={{ marginLeft: '40px' }}>Sign Up</Button></Link>
           </Container>
           <br /><br />
+
+          <Container>
+            <img style={{marginLeft:'260px',width:'400px'}} src="/login-image.jpg"></img>
+          </Container>
 
         </form>
       </div>
